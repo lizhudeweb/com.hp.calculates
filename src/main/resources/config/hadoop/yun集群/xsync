@@ -1,0 +1,39 @@
+#!/bin/bash
+#1 获取输入参数个数
+pcount=$#
+echo pcount=$pcount
+if((pcount==0)); then
+echo no args;
+exit;
+fi
+
+#2 获取文件名称
+p1=$1
+fname=`basename $p1`
+echo fname=$fname
+
+#3 获取上级目录到绝对路径
+pdir=`cd -P $(dirname $p1); pwd`
+echo pdir=$pdir
+
+#4 获取当前用户名称
+user=`whoami`
+echo user=$user
+
+
+echo --------------- hadoop-lc ----------------
+echo $pdir/$fname $user@hadoop-lc:$pdir
+rsync -rvl $pdir/$fname $user@hadoop-lc:$pdir
+echo --------------- hadoop-al ----------------
+echo $pdir/$fname $user@hadoop-al:$pdir
+rsync -rvl $pdir/$fname $user@hadoop-al:$pdir
+
+#5 循环
+#for((host=103; host<105; host++)); do
+        #echo $pdir/$fname $user@hadoop$host:$pdir
+       # echo --------------- hadoop$host ----------------
+        #rsync -rvl $pdir/$fname $user@hadoop$host:$pdir
+#done
+
+
+
