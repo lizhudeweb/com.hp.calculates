@@ -28,17 +28,42 @@
 		<value>linux112</value>
 	</property>
 
-<!-- 日志聚集功能使能 -->
-<!-- <property>
-<name>yarn.log-aggregation-enable</name>
-<value>true</value>
-</property> -->
-<!-- 日志保留时间设置7天 -->
-<!-- <property>
-<name>yarn.log-aggregation.retain-seconds</name>
-<value>604800</value>
-</property> -->
 
 
 
+	<!-- 日志聚集功能   执行结束后收集各个container本地的日志 -->
+	<property>
+		<name>yarn.log-aggregation-enable</name>
+		<value>true</value>
+	</property>
+	<!-- 收集的日志的保留时间，以秒为单位，到时后被删除 -->
+	<property>
+		<name>yarn.log-aggregation.retain-seconds</name>
+		<value>86400</value>
+	</property>
+	
+	
+	<!-- 任务历史服务 -->
+ 	<property> 
+		<name>yarn.log.server.url</name> 
+		<value>http://hadoop-tx:19888/jobhistory/logs/</value> 
+	</property>
+	
+	<!-- 单个容器可申请的最大内存-->
+	<property>
+	    <name>yarn.scheduler.maximum-allocation-mb</name>
+	    <value>2048</value>
+	</property>
+	<!-- 物理内存 与 虚拟内存的比率，每用1M物理内存，默认使用2.1M虚拟内存 -->
+	<property>
+	    <name>yarn.nodemanager.vmem-pmem-ratio</name>
+	    <value>2.1</value>
+	</property>
+	<!--jvm参数 默认1g 在新版本中已经标准为过期，取而代之的是  mapred.map.child.java.opts和mapred.reduce.child.java.opts -->
+	<property> 
+		<name>mapred.child.java.opts</name> 
+		<value>-Xmx1024m</value> 
+	</property> 
+	
+	
 </configuration>

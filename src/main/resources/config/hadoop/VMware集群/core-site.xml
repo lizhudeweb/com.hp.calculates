@@ -17,15 +17,38 @@
 <!-- Put site-specific property overrides in this file. -->
 
 <configuration>
-<property>
-	<name>fs.defaultFS</name>
-    <value>hdfs://linux111:9000</value>
-</property>
+	<property>
+		<name>fs.defaultFS</name>
+	    <value>hdfs://linux111:9000</value>
+	</property>
+	
+	<!-- 指定hadoop运行时产生文件的存储目录 -->
+	<property>
+		<name>hadoop.tmp.dir</name>
+		<value>/opt/module/hadoop-2.7.2/data/tmp</value>
+	</property>
 
-<!-- 指定hadoop运行时产生文件的存储目录 -->
-<property>
-	<name>hadoop.tmp.dir</name>
-	<value>/opt/module/hadoop-2.7.2/data/tmp</value>
-</property>
 
+
+	<!-- Oozie Server的Hostname -->
+	<property>
+		<name>hadoop.proxyuser.admin.hosts</name>
+		<value>*</value>
+	</property>
+	<!-- 允许被Oozie代理的用户组 -->
+	<property>
+		<name>hadoop.proxyuser.admin.groups</name>
+		<value>*</value>
+	</property>
+
+	<property>
+		<name>hadoop.proxyuser.httpfs.hosts</name>
+		<value>*</value>
+	</property>
+
+	<property>
+		<name>hadoop.proxyuser.httpfs.groups</name>
+		<value>*</value>
+	</property>
+	
 </configuration>
