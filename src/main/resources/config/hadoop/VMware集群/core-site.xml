@@ -32,12 +32,12 @@
 
 	<!-- Oozie Server的Hostname -->
 	<property>
-		<name>hadoop.proxyuser.admin.hosts</name>
+		<name>hadoop.proxyuser.datamgr.hosts</name>
 		<value>*</value>
 	</property>
 	<!-- 允许被Oozie代理的用户组 -->
 	<property>
-		<name>hadoop.proxyuser.admin.groups</name>
+		<name>hadoop.proxyuser.datamgr.groups</name>
 		<value>*</value>
 	</property>
 

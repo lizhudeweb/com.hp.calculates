@@ -8,9 +8,9 @@
 	# ssh $i '/opt/module/zookeeper-3.4.10/bin/zkServer.sh stop'
 # done
 
-#sbin/mr-jobhistory-daemon.sh stop historyserver
 
 echo "=================   开始关闭yarn     ======================="
+sh /opt/module/hadoop-2.7.2/sbin/mr-jobhistory-daemon.sh stop historyserver
 sh /opt/module/hadoop-2.7.2/sbin/yarn-daemon.sh stop nodemanager
 sh /opt/module/hadoop-2.7.2/sbin/yarn-daemon.sh stop resourcemanager
 sh /opt/module/hadoop-2.7.2/sbin/hadoop-daemon.sh stop datanode

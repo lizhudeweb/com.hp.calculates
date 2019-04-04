@@ -40,7 +40,8 @@
 		<name>dfs.namenode.http-address</name>
 		<value>linux111:50070</value>
 	</property>
-	<!-- 使用namenode的IP和端口进行所有的webhdfs操作 -->
+	<!-- 不区分端口 使用namenode的IP和端口进行所有的webhdfs操作    -->
+	<!-- 访问文件、文件夹信息使用namenode的IP和50070端口，访问文件内容或者进行打开、上传、修改、下载等操作使用datanode的IP和50075端口。   -->
 	<property>
 		<name>dfs.webhdfs.enabled</name>
 		<value>true</value>

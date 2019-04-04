@@ -25,4 +25,20 @@
 	</property> 
 
 
+	<property>
+        <name>dfs.namenode.secondary.http-address</name>
+        <value>linux000:50090</value>
+    </property>
+
+
+<!-- 	<property> -->
+<!-- 		<name>dfs.namenode.http-address</name> -->
+<!-- 		<value>linux000:50070</value> -->
+<!-- 	</property> -->
+	<!-- 使用namenode的IP和端口进行所有的webhdfs操作 -->
+<!-- 	<property> -->
+<!-- 		<name>dfs.webhdfs.enabled</name> -->
+<!-- 		<value>true</value> -->
+<!-- 	</property> -->
+	
 </configuration>

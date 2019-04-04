@@ -46,7 +46,7 @@
 	<!-- 任务历史服务 -->
  	<property> 
 		<name>yarn.log.server.url</name> 
-		<value>http://hadoop-tx:19888/jobhistory/logs/</value> 
+		<value>http://linux111:19888/jobhistory/logs/</value> 
 	</property>
 	
 	<!-- 单个容器可申请的最大内存-->

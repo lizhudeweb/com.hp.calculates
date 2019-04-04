@@ -28,17 +28,22 @@
 	</property>
 	
 
-	<!-- 日志聚集功能使能 -->
-	<!-- <property>
-	<name>yarn.log-aggregation-enable</name>
-	<value>true</value>
-	</property> -->
-	<!-- 日志保留时间设置7天 -->
-	<!-- <property>
-	<name>yarn.log-aggregation.retain-seconds</name>
-	<value>604800</value>
-	</property> -->
+	<!-- 日志聚集功能   执行结束后收集各个container本地的日志 -->
+<!-- 	<property> -->
+<!-- 		<name>yarn.log-aggregation-enable</name> -->
+<!-- 		<value>true</value> -->
+<!-- 	</property> -->
+	<!-- 收集的日志的保留时间，以秒为单位，到时后被删除 -->
+<!-- 	<property> -->
+<!-- 		<name>yarn.log-aggregation.retain-seconds</name> -->
+<!-- 		<value>86400</value> -->
+<!-- 	</property> -->
 
 
-
+	<!-- 任务历史服务 -->
+<!--  	<property>  -->
+<!-- 		<name>yarn.log.server.url</name>  -->
+<!-- 		<value>http://linux000:19888/jobhistory/logs/</value>  -->
+<!-- 	</property> -->
+	
 </configuration>

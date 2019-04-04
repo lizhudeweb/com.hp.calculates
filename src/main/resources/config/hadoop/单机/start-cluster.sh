@@ -14,6 +14,7 @@ sh /opt/module/hadoop-2.7.2/sbin/hadoop-daemon.sh start namenode
 sh /opt/module/hadoop-2.7.2/sbin/hadoop-daemon.sh start datanode
 sh /opt/module/hadoop-2.7.2/sbin/yarn-daemon.sh start resourcemanager
 sh /opt/module/hadoop-2.7.2/sbin/yarn-daemon.sh start nodemanager
+sh /opt/module/hadoop-2.7.2/sbin/mr-jobhistory-daemon.sh start historyserver
 # echo "=================   hadoop-tx开始启动jobhistory    ======================="
 # ssh datamgr@hadoop-tx '/opt/module/hadoop-2.7.2/sbin/mr-jobhistory-daemon.sh start historyserver'
 
