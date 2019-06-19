@@ -1,0 +1,76 @@
+<workflow-app xmlns="uri:oozie:workflow:0.2" name="map-reduce-wf">
+	<start to="mr-node" />
+	<action name="mr-node">
+		<map-reduce>
+			<job-tracker>${jobTracker}</job-tracker>
+			<name-node>${nameNode}</name-node>
+			<prepare>
+				<delete path="${nameNode}/output/" />
+			</prepare>
+			<configuration>
+				<property>
+					<name>mapred.job.queue.name</name>
+					<value>${queueName}</value>
+				</property>
+				<!-- 配置调度MR任务时，使用新的API -->
+				<property>
+					<name>mapred.mapper.new-api</name>
+					<value>true</value>
+				</property>
+
+				<property>
+					<name>mapred.reducer.new-api</name>
+					<value>true</value>
+				</property>
+
+				<!-- 指定Job Key输出类型 -->
+				<property>
+					<name>mapreduce.job.output.key.class</name>
+					<value>org.apache.hadoop.io.Text</value>
+				</property>
+
+				<!-- 指定Job Value输出类型 -->
+				<property>
+					<name>mapreduce.job.output.value.class</name>
+					<value>org.apache.hadoop.io.IntWritable</value>
+				</property>
+
+				<!-- 指定输入路径 -->
+				<property>
+					<name>mapred.input.dir</name>
+					<value>/input/</value>
+				</property>
+
+				<!-- 指定输出路径 -->
+				<property>
+					<name>mapred.output.dir</name>
+					<value>/output/</value>
+				</property>
+
+				<!-- 指定Map类 -->
+				<property>
+					<name>mapreduce.job.map.class</name>
+					<value>org.apache.hadoop.examples.WordCount$TokenizerMapper</value>
+				</property>
+
+				<!-- 指定Reduce类 -->
+				<property>
+					<name>mapreduce.job.reduce.class</name>
+					<value>org.apache.hadoop.examples.WordCount$IntSumReducer</value>
+				</property>
+
+				<property>
+					<name>mapred.map.tasks</name>
+					<value>1</value>
+				</property>
+			</configuration>
+		</map-reduce>
+		<ok to="end" />
+		<error to="fail" />
+	</action>
+	<kill name="fail">
+		<message>Map/Reduce failed, error
+			message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+	</kill>
+	<end name="end" />
+</workflow-app>
