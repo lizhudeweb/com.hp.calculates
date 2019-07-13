@@ -12,7 +12,7 @@
 			</configuration>
 			<exec>${EXEC1}</exec>
 			<!-- <argument>my_output=Hello Oozie</argument> -->
-			<file>/user/admin/oozie-apps/shell/${EXEC1}#${EXEC1}</file>
+			<file>/user/datamgr/oozie-apps/shell/${EXEC1}#${EXEC1}</file>
 			
 			<capture-output />
 		</shell>
@@ -31,7 +31,7 @@
 				</property>
 			</configuration>
 			<exec>${EXEC2}</exec>
-			<file>/user/admin/oozie-apps/shell/${EXEC2}#${EXEC2}</file>
+			<file>/user/datamgr/oozie-apps/shell/${EXEC2}#${EXEC2}</file>
 			<!-- <argument>my_output=Hello Oozie</argument> -->
 			<capture-output />
 		</shell>

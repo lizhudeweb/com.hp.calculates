@@ -5,7 +5,7 @@
 echo "=================   start running Zookeeper cluster    ======================="
 for i in datamgr@linux111 datamgr@linux112 datamgr@linux113
 do
-	ssh $i '/opt/module/zookeeper-3.4.10/bin/zkServer.sh start'
+	ssh $i '/opt/module/cdh/zookeeper-3.4.5-cdh5.3.6/bin/zkServer.sh start'
 	echo "$i zookeeper is runned"
 done
 
@@ -24,10 +24,11 @@ done
 #done
 
 echo "=================   开始启动HDFS     ======================="
-ssh datamgr@linux111 '/opt/module/hadoop-2.7.2/sbin/start-dfs.sh'
+ssh datamgr@linux111 '/opt/module/cdh/hadoop-2.5.0-cdh5.3.6/sbin/start-dfs.sh'
 echo "=================   开始启动yarn     ======================="
-ssh datamgr@linux112 '/opt/module/hadoop-2.7.2/sbin/start-yarn.sh'
+ssh datamgr@linux112 '/opt/module/cdh/hadoop-2.5.0-cdh5.3.6/sbin/start-yarn.sh'
 
-# echo "=================   linux111开始启动jobhistory    ======================="
-# ssh datamgr@linux111 '/opt/module/hadoop-2.7.2/sbin/mr-jobhistory-daemon.sh start historyserver'
+echo "=================   linux111开始启动jobhistory    ======================="
+ssh datamgr@linux111 '/opt/module/cdh/hadoop-2.5.0-cdh5.3.6/sbin/mr-jobhistory-daemon.sh start historyserver'
+
 

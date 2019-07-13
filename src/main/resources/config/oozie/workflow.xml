@@ -12,7 +12,7 @@
 			</configuration>
 			<exec>${EXEC}</exec>
 			<!-- <argument>my_output=Hello Oozie</argument> -->
-			<file>/user/admin/oozie-apps/shell/${EXEC}#${EXEC}</file>
+			<file>/user/datamgr/oozie-apps/shell/${EXEC}#${EXEC}</file>
 
 			<capture-output />
 		</shell>
