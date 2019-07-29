@@ -37,7 +37,9 @@ public class WordcountDriver {
 
 		// 处理小文件
 //		job.setInputFormatClass(CombineTextInputFormat.class);
+		// 小于默认blockSize的值128，越小map数量越多
 //		CombineTextInputFormat.setMaxInputSplitSize(job, 4194304);
+		// 大于默认blockSize的值，越大map数量越少。
 //		CombineTextInputFormat.setMinInputSplitSize(job, 2097152);
 		
 		// 6 设置输入数据和输出数据路径
