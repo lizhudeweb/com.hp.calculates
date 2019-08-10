@@ -3,20 +3,20 @@
 # cat  /etc/profile  >> ~/.bashrc   cat /etc/bashrc
 # cat  /etc/profile  >> /etc/bashrc 
 
-#echo "=================   start stopping Kafka cluster    ======================="
-#/opt/module/kafka/bin/kafka-server-stop.sh stop
-#for host in datamgr@linux113 datamgr@linux112
-#do
-#	ssh $host "/opt/module/kafka/bin/kafka-server-stop.sh stop"
-#    # ssh $host "source /etc/profile; /opt/module/kafka/bin/kafka-server-stop.sh"
-#	# bin/kafka-server-stop.sh stop
-#    
-#    if [[ $? -eq 0 ]]; then
-#		echo "$host kafka is stopped"
-#    fi
-#done
 
+echo "=================   start stopping Kafka cluster    ======================="
+/opt/module/kafka/bin/kafka-server-stop.sh stop 
+echo "linux111 kafka is stopped"
+for host in datamgr@linux113 datamgr@linux112
+do
+	ssh $host "/opt/module/kafka/bin/kafka-server-stop.sh stop"
+	# bin/kafka-server-stop.sh stop
+    if [[ $? -eq 0 ]]; then
+		echo "$host kafka is stopped"
+    fi
+done
 
+# cdh版HA个要依托zookeeper，先关hadoop把
 echo "=================   开始关闭yarn     ======================="
 ssh datamgr@linux112 '/opt/module/cdh/hadoop-2.5.0-cdh5.3.6/sbin/stop-yarn.sh'
 echo "=================   开始关闭HDFS     ======================="

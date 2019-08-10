@@ -50,8 +50,8 @@
 # Hive Configuration Directory can be controlled by:
 # export HIVE_CONF_DIR=
 
-export HADOOP_HOME=/opt/module/hadoop-2.7.2 
-export HIVE_CONF_DIR=/opt/module/hive/conf
+export HADOOP_HOME=/opt/module/cdh/hadoop-2.5.0-cdh5.3.6/
+export HIVE_CONF_DIR=/opt/module/cdh/hive/conf
 
 # Folder containing extra ibraries required for hive compilation/execution can be controlled by:
 # export HIVE_AUX_JARS_PATH=

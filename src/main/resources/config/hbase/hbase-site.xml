@@ -23,9 +23,9 @@
 <configuration>
 
 	<property>     
-		<name>hbase.rootdir</name>     
-		<!-- 		8020 -->
-		<value>hdfs://linux111:9000/hbase</value>   
+		<name>hbase.rootdir</name>
+<!-- 		<value>hdfs://linux111:9000/hbase</value>    -->
+		<value>hdfs://linux111:8020/hbase</value>   
 	</property>
 
 	<property>   
@@ -46,7 +46,7 @@
 
 	<property>   
 		<name>hbase.zookeeper.property.dataDir</name>
-	 	<value>/opt/module/zookeeper-3.4.10/zkData</value>
+	 	<value>/opt/module/cdh/zookeeper-3.4.5-cdh5.3.6/zkData</value>
 	</property>
 	
 <!-- 	<property> -->
