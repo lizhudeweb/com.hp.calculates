@@ -1,0 +1,33 @@
+#!/bin/bash
+# cat /etc/profle >> .bashr
+# cat  /etc/profile  >> ~/.bashrc
+
+echo "=================   start running Zookeeper cluster    ======================="
+for i in datamgr@linux111 datamgr@linux112 datamgr@linux113
+do
+	ssh $i '/opt/module/cdh/zookeeper-3.4.5-cdh5.3.6/bin/zkServer.sh start'
+	echo "$i zookeeper is runned"
+done
+
+echo "=================   start running Kafka cluster   ======================="
+KAFKA_HOME_TMP="/opt/module/kafka"  
+for host in datamgr@linux111 datamgr@linux112 datamgr@linux113
+do
+	echo "========  $host start running  ========="
+	ssh $host "nohup ${KAFKA_HOME_TMP}/bin/kafka-server-start.sh ${KAFKA_HOME_TMP}/config/server.properties >/dev/null 2>&1 &" 
+	#/bin/kafka-server-start.sh config/server.properties &
+
+	if [[ $? -eq 0 ]]; then
+		echo "$host kafka is runned"
+    fi
+done
+
+echo "=================   开始启动HDFS     ======================="
+ssh datamgr@linux111 '/opt/module/cdh/hadoop-2.5.0-cdh5.3.6/sbin/start-dfs.sh'
+echo "=================   开始启动yarn     ======================="
+ssh datamgr@linux112 '/opt/module/cdh/hadoop-2.5.0-cdh5.3.6/sbin/start-yarn.sh'
+
+echo "=================   linux111开始启动jobhistory    ======================="
+ssh datamgr@linux111 '/opt/module/cdh/hadoop-2.5.0-cdh5.3.6/sbin/mr-jobhistory-daemon.sh start historyserver'
+
+

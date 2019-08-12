@@ -15,7 +15,7 @@ public class CustomConsumer {
 		props.put("group.id", "g12");
 		// 是否自动确认offset 
 		props.put("enable.auto.commit", "true");
-		//--from-beginning
+		//--from-beginning   smallest
 		props.put("auto.offset.reset", "earliest");
 		// 自动确认offset的时间间隔 
 		props.put("auto.commit.interval.ms", "1000");

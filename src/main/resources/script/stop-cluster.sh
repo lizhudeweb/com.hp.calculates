@@ -34,5 +34,5 @@ ssh datamgr@linux112 '/opt/module/hadoop-2.7.2/sbin/stop-yarn.sh'
 echo "=================   开始关闭HDFS     ======================="
 ssh datamgr@linux111 '/opt/module/hadoop-2.7.2/sbin/stop-dfs.sh'
 
-# echo "=================   linux111开始启动jobhistory    ======================="
-# ssh datamgr@linux111 '/opt/module/hadoop-2.7.2/sbin/mr-jobhistory-daemon.sh start historyserver'
+echo "=================   linux111开始启动jobhistory    ======================="
+ssh datamgr@linux111 '/opt/module/hadoop-2.7.2/sbin/mr-jobhistory-daemon.sh start historyserver'
