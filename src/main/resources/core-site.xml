@@ -19,12 +19,12 @@
 <configuration>
 	<property>
 		<name>fs.defaultFS</name>
-		<value>hdfs://hadoop-senior01.itguigu.com:8020</value>
+		<value>hdfs://linux111:8020</value>
 	</property>
 
 	<property>
 		<name>hadoop.tmp.dir</name>
-		<value>/opt/modules/cdh/hadoop-2.5.0-cdh5.3.6/data</value>
+		<value>/opt/module/cdh/hadoop-2.5.0-cdh5.3.6/data</value>
 	</property>
 
   <property>

@@ -20,7 +20,7 @@
 	<!-- 指定数据冗余份数 -->
 	<property>
 		<name>dfs.replication</name>
-		<value>3</value>
+		<value>1</value>
 	</property>
 	
 	<!-- 关闭权限检查-->
@@ -31,12 +31,12 @@
 
 	<property>
 		<name>dfs.namenode.secondary.http-address</name>
-		<value>hadoop-senior03.itguigu.com:50090</value>
+		<value>linux113:50090</value>
 	</property>
 
 	<property>
 		<name>dfs.namenode.http-address</name>
-		<value>hadoop-senior01.itguigu.com:50070</value>
+		<value>linux111:50070</value>
 	</property>
 
 	<property>

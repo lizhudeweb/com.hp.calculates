@@ -13,7 +13,7 @@ public class WordcountDriver {
 
 	public static void main(String[] args) throws Exception {
 
-		args = new String[] { "e:/input/wc", "e:/output" };
+		args = new String[] { "d:/input", "d:/output" };
 		
 		// 1 获取job对象信息
 		Configuration configuration = new Configuration();

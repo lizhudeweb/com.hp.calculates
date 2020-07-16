@@ -28,13 +28,13 @@ public class IOToHFDFS {
 		
 		// 1 获取文件系统
 		Configuration configuration = new Configuration();
-		FileSystem fs = FileSystem.get(new URI("hdfs://hadoop102:8020"), configuration, "datamgr");
+		FileSystem fs = FileSystem.get(new URI("hdfs://linux111:8020"), configuration, "datamgr");
 		
 		// 2 获取输出流
-		FSDataOutputStream fos = fs.create(new Path("/user/datamgr/output/dongsi.txt"));
+		FSDataOutputStream fos = fs.create(new Path("/user/datamgr/input/one.txt"));
 		
 		// 3 获取输入流
-		FileInputStream fis = new FileInputStream(new File("e:/dongsi.txt"));
+		FileInputStream fis = new FileInputStream(new File("d:/input/one.txt"));
 		
 		try {
 			// 4 流对接
@@ -54,13 +54,13 @@ public class IOToHFDFS {
 	public void getFileFromHDFS() throws IOException, InterruptedException, URISyntaxException{
 		// 1 获取文件系统
 		Configuration configuration = new Configuration();
-		FileSystem fs = FileSystem.get(new URI("hdfs://hadoop102:8020"), configuration, "datamgr");
+		FileSystem fs = FileSystem.get(new URI("hdfs://linux111:8020"), configuration, "datamgr");
 		
 		// 2 获取输入流
-		FSDataInputStream fis = fs.open(new Path("/user/datamgr/xiyou.txt"));
+		FSDataInputStream fis = fs.open(new Path("/user/datamgr/input/one.txt"));
 		
 		// 3 创建输出流
-		FileOutputStream fos = new FileOutputStream(new File("e:/xiyou.txt"));
+		FileOutputStream fos = new FileOutputStream(new File("c:/Users/lizhu/Desktop/one.txt"));
 		
 		try {
 			// 4 流的对接

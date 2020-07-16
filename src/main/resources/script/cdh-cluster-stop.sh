@@ -21,7 +21,7 @@ echo "=================   开始关闭yarn     ======================="
 ssh datamgr@linux112 '/opt/module/cdh/hadoop-2.5.0-cdh5.3.6/sbin/stop-yarn.sh'
 echo "=================   开始关闭HDFS     ======================="
 ssh datamgr@linux111 '/opt/module/cdh/hadoop-2.5.0-cdh5.3.6/sbin/stop-dfs.sh'
-echo "=================   linux111开始启动jobhistory    ======================="
+echo "=================   linux111开始关闭jobhistory    ======================="
 ssh datamgr@linux111 '/opt/module/cdh/hadoop-2.5.0-cdh5.3.6/sbin/mr-jobhistory-daemon.sh stop historyserver'
 
 
